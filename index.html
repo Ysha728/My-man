@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Question for You 💗</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #ffe4ef;
+      color: #9d174d;
+      text-align: center;
+      padding: 40px 15px;
+    }
+
+    .box {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 25px;
+      max-width: 350px;
+      margin: 50px auto;
+      box-shadow: 0 8px 25px #e9a3c0;
+    }
+
+    button {
+      background: #ec4899;
+      color: white;
+      border: none;
+      padding: 13px 20px;
+      margin: 8px;
+      border-radius: 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #answer {
+      font-weight: bold;
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>HEY, YOU! 💗</h1>
+    <p>My handsome boyfriend, answer carefully. 🤨</p>
+    <h2>Do you love me? 🥹</h2>
+
+    <button onclick="yes()">YES, OF COURSE ❤️</button>
+    <button onclick="no()">NO 😈</button>
+
+    <p id="answer"></p>
+  </div>
+
+  <script>
+    function yes() {
+      document.getElementById("answer").innerHTML =
+        "GOOD. NOW PROVE IT WITH 100 KISSES. 😘💋";
+    }
+
+    function no() {
+      document.getElementById("answer").innerHTML =
+        "EXCUSE ME?! 😭 TRY AGAIN, SIR. 🤨💗";
+    }
+  </script>
+</body>
+</html>
