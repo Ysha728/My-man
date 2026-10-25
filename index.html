@@ -4,64 +4,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A Question for You 💗</title>
+  <title>JUST SAY NO 😈</title>
+
   <style>
     body {
-      font-family: Arial, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       background: #ffe4ef;
-      color: #9d174d;
+      font-family: Arial, sans-serif;
       text-align: center;
-      padding: 40px 15px;
+      overflow: hidden;
     }
 
-    .box {
-      background: white;
-      padding: 30px 20px;
-      border-radius: 25px;
-      max-width: 350px;
-      margin: 50px auto;
-      box-shadow: 0 8px 25px #e9a3c0;
+    h1 {
+      color: #be185d;
+      padding: 15px;
     }
 
-    button {
+    #noButton {
       background: #ec4899;
       color: white;
       border: none;
-      padding: 13px 20px;
-      margin: 8px;
       border-radius: 20px;
-      font-size: 16px;
+      padding: 18px 45px;
+      font-size: 24px;
+      font-weight: bold;
       cursor: pointer;
+      transition: all 0.25s ease;
+      max-width: 95vw;
+      max-height: 65vh;
     }
 
-    #answer {
+    #message {
+      color: #9d174d;
+      font-size: 20px;
       font-weight: bold;
-      margin-top: 20px;
-      font-size: 18px;
+      padding: 15px;
     }
   </style>
 </head>
+
 <body>
-  <div class="box">
-    <h1>HEY, YOU! 💗</h1>
-    <p>My handsome boyfriend, answer carefully. 🤨</p>
-    <h2>Do you love me? 🥹</h2>
+  <h1 id="title">DO YOU LOVE ME? 💗</h1>
 
-    <button onclick="yes()">YES, OF COURSE ❤️</button>
-    <button onclick="no()">NO 😈</button>
+  <button id="noButton" onclick="grow()">
+    NO 😈
+  </button>
 
-    <p id="answer"></p>
-  </div>
+  <p id="message">Go ahead. Press NO. 🤨</p>
 
   <script>
-    function yes() {
-      document.getElementById("answer").innerHTML =
-        "GOOD. NOW PROVE IT WITH 100 KISSES. 😘💋";
-    }
+    let clicks = 0;
 
-    function no() {
-      document.getElementById("answer").innerHTML =
-        "EXCUSE ME?! 😭 TRY AGAIN, SIR. 🤨💗";
+    function grow() {
+      clicks++;
+
+      const button = document.getElementById("noButton");
+      const message = document.getElementById("message");
+      const title = document.getElementById("title");
+
+      const size = Math.min(24 + clicks * 8, 100);
+
+      button.style.fontSize = size + "px";
+      button.style.padding =
+        Math.min(18 + clicks * 10, 100) + "px " +
+        Math.min(45 + clicks * 15, 140) + "px";
+
+      const messages = [
+        "HAHAHA PRESS IT AGAIN 😭",
+        "WHY ARE YOU STILL PRESSING IT?! 💀",
+        "THE NO BUTTON IS EVOLVING 😈",
+        "BRO, IT'S GETTING BIGGER 😂",
+        "YOU CANNOT ESCAPE THE NO 😭",
+        "OKAY, THIS BUTTON OWNS THE SCREEN NOW 💗"
+      ];
+
+      message.textContent =
+        messages[Math.min(clicks - 1, messages.length - 1)];
+
+      if (clicks >= 4) {
+        title.textContent = "ARE YOU HAPPY NOW?! 😭";
+      }
+
+      if (clicks >= 8) {
+        button.textContent = "STILL NO?! 💀";
+      }
+
+      if (clicks >= 12) {
+        button.style.width = "95vw";
+        button.style.height = "55vh";
+        button.textContent = "NO NO NO 😈";
+      }
     }
   </script>
 </body>
